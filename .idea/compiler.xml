@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Quarternary-Calc-3" target="17" />
+      <module name="Quarternary-Calc-3 (1)" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
