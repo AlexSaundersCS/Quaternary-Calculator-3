@@ -48,18 +48,24 @@ public class CalculatorController {
     public void handleEqualPress(){
         int convertedNum1 = converter.toDecimal(this.number1);
         int convertedNum2 = converter.toDecimal(this.number2);
-        int result = 0;
+
         switch (operation){
             case Add:
-                result = calculator.addition(convertedNum1,convertedNum2);
+                var intResult = calculator.addition(convertedNum1,convertedNum2);
+                System.out.println(converter.toQuaternary(intResult));
+                setResult(converter.toQuaternary(intResult));
+
             case Subtract:
-                result =calculator.subtraction(convertedNum1,convertedNum2);
+                intResult =calculator.subtraction(convertedNum1,convertedNum2);
+                setResult(converter.toQuaternary(intResult));
             case Multiply:
-                result =calculator.multiplication(convertedNum1,convertedNum2);
+                intResult =calculator.multiplication(convertedNum1,convertedNum2);
+                setResult(converter.toQuaternary(intResult));
             case Divide:
-                result =calculator.division(convertedNum1,convertedNum2);
+                intResult =calculator.division(convertedNum1,convertedNum2);
+                setResult(converter.toQuaternary(intResult));
         }
-        setResult(converter.toQuaternary(result));
+
     }
 
     public ArrayList<Integer> getNumber1() {
@@ -86,7 +92,25 @@ public class CalculatorController {
         this.operation = operation;
     }
 
+    public ArrayList<Integer> getResult() {
+        return result;
+    }
+
     public void setResult(ArrayList<Integer> result) {
         this.result = result;
+    }
+    public  void handleClear(){
+        number1 = new ArrayList<>();
+        operation = null;
+        number2 = new ArrayList<>();
+        result = new ArrayList<>();
+    }
+    public  void handleDelete(){
+        if(operation == null){
+            this.number1 = new ArrayList<>();
+            return;
+        }
+        this.number2 = new ArrayList<>();
+        return;
     }
 }
