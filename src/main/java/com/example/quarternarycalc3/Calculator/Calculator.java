@@ -8,15 +8,7 @@ public class Calculator {
     }
 
     public int addition(int num1, int num2){
-        int result = num1 + num2;
-        try{
-            if (num1 < 0 || num2 < 0 || result < 0) {
-                throw new Exception();
-            }
-        } catch(Exception e){
-            return 0;
-        }
-        return result;
+        return num1 + num2;
     }
 
     public int subtraction(int num1, int num2){
@@ -28,14 +20,6 @@ public class Calculator {
     }
 
     public int division(int num1, int num2){
-        try{
-            int number1 = 10;
-            int number2 = 0;
-            int result = number1/number2;
-            System.out.println(result);
-        } catch(Exception e){
-            return 0;
-        }
         return num1 / num2;
     }
 

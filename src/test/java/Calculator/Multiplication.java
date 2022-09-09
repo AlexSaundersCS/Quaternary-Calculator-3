@@ -8,20 +8,6 @@ public class Multiplication {
 
     Calculator calculator = new Calculator();
 
-
-    @Test
-    void WhenInputIsNegativeShouldRaiseException(){
-        Assertions.assertThrows(Exception.class,()->{
-            calculator.multiplication(-6, -4);
-        });
-    }
-
-    @Test
-    void WhenResultIsNegativeShouldRaiseException(){
-        Assertions.assertThrows(Exception.class,()->{
-            calculator.multiplication(8, -4);
-        });
-    }
     @Test
     void testing_Multiplication_1(){
         int result = calculator.multiplication(4, 5);

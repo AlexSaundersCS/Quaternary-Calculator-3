@@ -8,16 +8,12 @@ public class CalculatorUI extends JFrame {
             btnDividing,
             btnMultiplying,
             btnClear,
-            btnDeleting,
+            btnDelete,
             btnEquals,
             btnSquareroot,
             btnSquare;
     JButton numBtn[];
     JTextField output;
-    int[] number1;
-    int[] number2;
-    CalcOperation operation;
-    String previous, current, operator;
 
     public CalculatorUI(){
         super("Quarternary Calculator");
@@ -31,7 +27,7 @@ public class CalculatorUI extends JFrame {
 
         //Creates the non number Buttons
         output = new JTextField(10);
-        btnDeleting = new JButton("Del");
+        btnDelete = new JButton("Del");
         btnDividing = new JButton("÷");
         btnAdding = new JButton("+");
         btnMultiplying = new JButton("*");
@@ -56,7 +52,7 @@ public class CalculatorUI extends JFrame {
         btnSubtracting.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnEquals.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnMultiplying.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
-        btnDeleting.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
+        btnDelete.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnAdding.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnSquareroot.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnSquare.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
@@ -65,10 +61,7 @@ public class CalculatorUI extends JFrame {
         //styles the display of the output
         output.setMaximumSize(new Dimension(500, 150));
         output.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
-        output.setText("");
-        output.setEditable(false);
-
-
+        output.setText(" ");
 
         //layout of each row and sets the row, can be moved around
         row1.setLayout(new BoxLayout(row1, BoxLayout.LINE_AXIS));
@@ -78,7 +71,7 @@ public class CalculatorUI extends JFrame {
 
         //add buttons to the row
         row1.add(btnClear);
-        row1.add(btnDeleting);
+        row1.add(btnDelete);
         row1.add(btnSquareroot);
         row1.add(btnSquare);
         row2.add(btnAdding);
@@ -104,37 +97,16 @@ public class CalculatorUI extends JFrame {
         this.add(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//ends program once calculator is closed
         this.setVisible(true); //makes it visible
-        this.setSize(500, 570);//sets size
-        Color color=new Color(205, 219 ,210);
-        mainPanel.setBackground(color);
+        this.setSize(660, 700);//sets size
+
     }
-
-
-    // methods that will define the various functionalities of the calculator.
-    public void delete() {
-        if (current.length() > 0) {
-            current = current.substring(0, current.length() - 1);
-        }
-    }
-    public void clear() {
-        current = "";
-        previous = "";
-        operator = null;
-    }
-
-    public void updateOutput() {
-        output.setText(current);
-    }
-
-
-
-
-
-
-
 
     public static void main(String[] arg){
         new CalculatorUI();
+
+
+
+
     }
 
 }

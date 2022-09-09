@@ -9,19 +9,6 @@ public class Subtraction {
     Calculator calculator = new Calculator();
 
     @Test
-    void WhenInputIsNegativeShouldRaiseException(){
-        Assertions.assertThrows(Exception.class,()->{
-            calculator.subtraction(-2, -4);
-        });
-    }
-
-    @Test
-    void WhenResultIsNegativeShouldRaiseException(){
-        Assertions.assertThrows(Exception.class,()->{
-            calculator.subtraction(10, -20);
-        });
-    }
-    @Test
     void testing_Subtraction_1(){
         int result = calculator.subtraction(10, 5);
         Assertions.assertEquals(5,result);
