@@ -30,7 +30,7 @@ public class ToQuaternary {
 
     @Test
     void ConvertToQuaternary_Two(){
-        String result = quaternaryConverter.toQuaternary(4896);
+        int[] result = quaternaryConverter.toQuaternary(4896);
         Assertions.assertTrue("1030200".equals( result ) );
     }
 

@@ -4,14 +4,13 @@ public class QuaternaryConverter {
     public QuaternaryConverter() {
 
     }
-    public int toDecimal(String quaternaryNumber){
-        char[] digitsList = quaternaryNumber.toCharArray(); //list of digits in input string
-        int quaternaryPower = quaternaryNumber.length() - 1;
+    public int toDecimal(int[] quaternaryNumber){
+        int quaternaryPower = quaternaryNumber.length - 1;
         int decimalNumber = 0;
 
-        for (char digit : digitsList)
+        for (int digit : quaternaryNumber)
         {
-            decimalNumber += Character.getNumericValue(digit) ^ quaternaryPower;
+            decimalNumber += Math.pow(digit, quaternaryPower);
             quaternaryPower -= 1;
         }
             return decimalNumber;
