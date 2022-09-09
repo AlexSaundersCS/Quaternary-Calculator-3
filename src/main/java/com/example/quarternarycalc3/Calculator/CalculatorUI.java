@@ -103,10 +103,6 @@ public class CalculatorUI extends JFrame {
 
     public static void main(String[] arg){
         new CalculatorUI();
-
-
-
-
     }
 
 }

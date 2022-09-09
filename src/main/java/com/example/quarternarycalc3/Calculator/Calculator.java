@@ -19,8 +19,20 @@ public class Calculator {
         return num1 * num2;
     }
 
-    public int division(int num1, int num2){
-        return num1 / num2;
+    public int division(int num1, int num2) {
+        int result = 0;
+        try {
+            if(num1 < 0 || num2 < 0){
+                throw new Exception("Numbers must be possible");
+            }
+            if (num2 == 0) {
+                throw new Exception("Can not divide by zero");
+            }
+            result = Math.round(num1/num2);
+        } catch (Exception e) {
+            result=0;
+        }
+        return result;
     }
 
     public int squareRoot(int num1){
