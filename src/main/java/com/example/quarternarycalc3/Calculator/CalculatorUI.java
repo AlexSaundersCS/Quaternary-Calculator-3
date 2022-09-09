@@ -8,7 +8,7 @@ public class CalculatorUI extends JFrame {
             btnDividing,
             btnMultiplying,
             btnClear,
-            //btnDeleting,
+            btnDeleting,
             btnEquals,
             btnSquareroot,
             btnSquare;
@@ -17,6 +17,7 @@ public class CalculatorUI extends JFrame {
     int[] number1;
     int[] number2;
     CalcOperation operation;
+    String previous, current, operator;
 
     public CalculatorUI(){
         super("Quarternary Calculator");
@@ -30,7 +31,7 @@ public class CalculatorUI extends JFrame {
 
         //Creates the non number Buttons
         output = new JTextField(10);
-        //btnDeleting = new JButton("Del");
+        btnDeleting = new JButton("Del");
         btnDividing = new JButton("÷");
         btnAdding = new JButton("+");
         btnMultiplying = new JButton("*");
@@ -55,7 +56,7 @@ public class CalculatorUI extends JFrame {
         btnSubtracting.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnEquals.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnMultiplying.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
-        //btnDelete.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
+        btnDeleting.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnAdding.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnSquareroot.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         btnSquare.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
@@ -77,7 +78,7 @@ public class CalculatorUI extends JFrame {
 
         //add buttons to the row
         row1.add(btnClear);
-        //row1.add(btnDelete);
+        row1.add(btnDeleting);
         row1.add(btnSquareroot);
         row1.add(btnSquare);
         row2.add(btnAdding);
@@ -107,6 +108,30 @@ public class CalculatorUI extends JFrame {
         Color color=new Color(205, 219 ,210);
         mainPanel.setBackground(color);
     }
+
+
+    // methods that will define the various functionalities of the calculator.
+    public void delete() {
+        if (current.length() > 0) {
+            current = current.substring(0, current.length() - 1);
+        }
+    }
+    public void clear() {
+        current = "";
+        previous = "";
+        operator = null;
+    }
+
+    public void updateOutput() {
+        output.setText(current);
+    }
+
+
+
+
+
+
+
 
     public static void main(String[] arg){
         new CalculatorUI();
