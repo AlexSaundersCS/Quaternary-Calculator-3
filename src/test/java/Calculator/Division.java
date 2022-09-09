@@ -47,4 +47,5 @@ public class Division {
         int result = calculator.division(36, 6);
         Assertions.assertEquals(6,result);
     }
+
 }
