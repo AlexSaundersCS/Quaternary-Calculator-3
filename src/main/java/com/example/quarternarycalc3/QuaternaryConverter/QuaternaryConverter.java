@@ -9,14 +9,17 @@ public class QuaternaryConverter {
         int quaternaryPower = quaternaryNumber.length() - 1;
         int decimalNumber = 0;
 
-        for (char digit : digitsList)
-        {
-            decimalNumber += Character.getNumericValue(digit) ^ quaternaryPower;
+        for (char digit : digitsList) {
+            decimalNumber += Character.getNumericValue(digit) * (4 ^ quaternaryPower);
             quaternaryPower -= 1;
         }
+
             return decimalNumber;
     }
-    public int[] toQuaternary(int integer){
+
+
+
+    public int[] toQuaternary(int decimalNumber){
         return new int[]{1};
     }
 }
