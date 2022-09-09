@@ -1,4 +1,4 @@
-package com.example.quarternarycalc3;
+package com.example.quarternarycalc;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

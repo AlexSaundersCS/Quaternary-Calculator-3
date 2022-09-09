@@ -1,6 +1,4 @@
-package com.example.quarternarycalc3.Calculator;
-
-import java.lang.Math.*;
+package com.example.quarternarycalc.Calculator;
 
 public class Calculator {
 

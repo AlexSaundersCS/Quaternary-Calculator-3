@@ -1,4 +1,4 @@
-package com.example.quarternarycalc3;
+package com.example.quarternarycalc;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

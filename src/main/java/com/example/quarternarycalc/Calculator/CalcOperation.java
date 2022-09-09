@@ -1,4 +1,4 @@
-package com.example.quarternarycalc3.Calculator;
+package com.example.quarternarycalc.Calculator;
 
 public enum CalcOperation {
     Add,

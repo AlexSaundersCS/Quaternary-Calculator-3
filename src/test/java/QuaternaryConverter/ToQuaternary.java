@@ -1,8 +1,10 @@
 package QuaternaryConverter;
 
-import com.example.quarternarycalc3.QuaternaryConverter.QuaternaryConverter;
+import com.example.quarternarycalc.QuaternaryConverter.QuaternaryConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -18,49 +20,59 @@ public class ToQuaternary {
 
     @Test
     void ConvertToQuaternary_Zero(){
-        int[] result = quaternaryConverter.toQuaternary(0);
-        assertArrayEquals(new int[]{0},result);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(0);
+        ArrayList<Integer> testValue = new ArrayList<Integer>();
+        testValue.add(0);
+        assertArrayEquals(testValue.toArray(),result.toArray());
     }
 
     @Test
     void ConvertToQuaternary_One(){
-        int[] result = quaternaryConverter.toQuaternary(1);
-        assertArrayEquals(new int[]{1},result);
+        ArrayList<Integer>result = quaternaryConverter.toQuaternary(1);
+        ArrayList<Integer> testValue = new ArrayList<Integer>();
+        testValue.add(1);
+        assertArrayEquals(testValue.toArray(),result.toArray());
     }
 
     @Test
     void ConvertToQuaternary_Four(){
-        int[] result = quaternaryConverter.toQuaternary(4);
-        assertArrayEquals(new int[]{1},result);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(4);
+        ArrayList<Integer> testValue = new ArrayList<Integer>();
+        testValue.add(1);
+        testValue.add(0);
+        assertArrayEquals(testValue.toArray(),result.toArray());
     }
 
     @Test
     void ConvertToQuaternary_Seven(){
-        int[] result = quaternaryConverter.toQuaternary(7);
-        assertArrayEquals(new int[]{1},result);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(7);
+        ArrayList<Integer> testValue = new ArrayList<Integer>();
+        testValue.add(1);
+        testValue.add(3);
+        assertArrayEquals(testValue.toArray(),result.toArray());
     }
 
     @Test
     void ConvertToQuaternary_Thirteen(){
-        int[] result = quaternaryConverter.toQuaternary(13);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(13);
         assertArrayEquals(new int[]{1,3},result);
     }
 
     @Test
     void ConvertToQuaternary_TwentyTwo(){
-        int[] result = quaternaryConverter.toQuaternary(22);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(22);
         assertArrayEquals(new int[]{1,1,2},result);
     }
 
     @Test
     void ConvertToQuaternary_OneHundredAndFive(){
-        int[] result = quaternaryConverter.toQuaternary(105);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(105);
         assertArrayEquals(new int[]{1221},result);
     }
 
     @Test
     void ConvertToQuaternary_FiveHundredSeventyFive(){
-        int[] result = quaternaryConverter.toQuaternary(105);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(105);
         assertArrayEquals(new int[]{1221},result);
     }
 

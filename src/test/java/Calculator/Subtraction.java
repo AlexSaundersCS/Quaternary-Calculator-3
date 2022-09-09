@@ -1,6 +1,6 @@
 package Calculator;
 
-import com.example.quarternarycalc3.Calculator.Calculator;
+import com.example.quarternarycalc.Calculator.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.example.quarternarycalc3.Calculator;
+package com.example.quarternarycalc.Calculator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,9 +14,7 @@ public class CalculatorUI extends JFrame {
             btnSquare;
     JButton numBtn[];
     JTextField output;
-    int[] number1;
-    int[] number2;
-    CalcOperation operation;
+
 
     public CalculatorUI(){
         super("Quarternary Calculator");

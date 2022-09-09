@@ -1,10 +1,9 @@
 package QuaternaryConverter;
 
-import com.example.quarternarycalc3.QuaternaryConverter.QuaternaryConverter;
+import com.example.quarternarycalc.QuaternaryConverter.QuaternaryConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -22,13 +21,17 @@ public class ToDecimal {
 
     @Test
     void ConvertToDecimal_Zero(){
-        int result = quaternaryConverter.toDecimal(new int[]{0});
+         ArrayList<Integer> zero = new ArrayList<Integer>();
+         zero.add(0);
+        int result = quaternaryConverter.toDecimal(zero);
         Assertions.assertEquals(0,result);
     }
 
     @Test
     void ConvertToDecimal_One(){
-        int result = quaternaryConverter.toDecimal(new int[]{1});
+        ArrayList<Integer> one = new ArrayList<Integer>();
+        one.add(1);
+        int result = quaternaryConverter.toDecimal(one);
         Assertions.assertEquals(1,result);
     }
 }
