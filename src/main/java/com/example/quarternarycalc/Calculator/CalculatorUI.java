@@ -2,6 +2,9 @@ package com.example.quarternarycalc.Calculator;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class CalculatorUI extends JFrame {
     JButton btnAdding,
             btnSubtracting,
@@ -14,6 +17,7 @@ public class CalculatorUI extends JFrame {
             btnSquare;
     JButton numBtn[];
     JTextField output;
+    CalculatorController controller;
 
 
     public CalculatorUI(){
@@ -99,14 +103,10 @@ public class CalculatorUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//ends program once calculator is closed
         this.setVisible(true); //makes it visible
         this.setSize(660, 700);//sets size
-
     }
 
     public static void main(String[] arg){
         new CalculatorUI();
-
-
-
 
     }
 
