@@ -9,12 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class ToQuaternary {
     QuaternaryConverter quaternaryConverter = new QuaternaryConverter();
 
-    @Test
-    void WhenInputIsNegativeShouldRaiseException(){
-    Assertions.assertThrows(Exception.class,()->{
-        quaternaryConverter.toQuaternary(-51);
-    });
-    }
 
     @Test
     void ConvertToQuaternary_Zero(){
