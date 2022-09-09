@@ -7,12 +7,6 @@ import org.junit.jupiter.api.Test;
 public class Exponents {
 
     Calculator calculator = new Calculator();
-    @Test
-    void WhenInputIsNegativeShouldRaiseException(){
-        Assertions.assertThrows(Exception.class,()->{
-            calculator.exponents(-4);
-        });
-    }
 
     @Test
     void testing_Exponents_1(){
@@ -24,5 +18,11 @@ public class Exponents {
     void testing_Exponents_2(){
         int result = calculator.exponents(10);
         Assertions.assertEquals(100,result);
+    }
+
+    @Test
+    void testing_Exponents_Exception_Num1(){
+        int result = calculator.exponents(-5);
+        Assertions.assertEquals(0,result);
     }
 }
