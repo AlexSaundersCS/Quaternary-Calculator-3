@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class Addition {
 
     Calculator calculator = new Calculator();
-
+    
     @Test
     void testing_Addition_1(){
         int result = calculator.addition(3, 3);
