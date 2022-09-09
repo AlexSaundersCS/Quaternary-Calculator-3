@@ -20,4 +20,22 @@ public class Subtraction {
         Assertions.assertEquals(31,result);
     }
 
+    @Test
+    void testing_Subtraction_Exception_Num1(){
+        int result = calculator.subtraction(-4, 75);
+        Assertions.assertEquals(0,result);
+    }
+
+    @Test
+    void testing_Subtraction_Exception_Num2(){
+        int result = calculator.subtraction(16, -12);
+        Assertions.assertEquals(0,result);
+    }
+
+    @Test
+    void testing_Subtraction_Exception_Result(){
+        int result = calculator.subtraction(10, 14);
+        Assertions.assertEquals(0,result);
+    }
+
 }

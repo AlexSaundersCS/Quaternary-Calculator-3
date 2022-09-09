@@ -19,4 +19,36 @@ public class Division {
         int result = calculator.division(36, 6);
         Assertions.assertEquals(6,result);
     }
+
+    @Test
+    void testing_Division_Exception_Num1(){
+        int result = calculator.division(-8, 4);
+        Assertions.assertEquals(0,result);
+    }
+
+    @Test
+    void testing_Division_Exception_Num2(){
+        int result = calculator.division(46, -2);
+        Assertions.assertEquals(0,result);
+    }
+
+    @Test
+    void testing_Division_Exception_Result(){
+        int result = calculator.division(-60, 15);
+        Assertions.assertEquals(0,result);
+    }
+
+    @Test
+    void testing_Division_Exception_DivideBy_0(){
+        int result = calculator.division(120, 0);
+        Assertions.assertEquals(0,result);
+    }
+
+    @Test
+    void testing_Division_Float_Result(){
+        int result = calculator.division(100, 9);
+        Assertions.assertEquals(11,result);
+    }
+
+
 }
