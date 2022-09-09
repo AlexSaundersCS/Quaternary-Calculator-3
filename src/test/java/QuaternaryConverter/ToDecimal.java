@@ -34,4 +34,32 @@ public class ToDecimal {
         int result = quaternaryConverter.toDecimal(one);
         Assertions.assertEquals(1,result);
     }
+
+    @Test
+    void ConvertToDecimal_10(){
+        ArrayList<Integer> one = new ArrayList<Integer>();
+        one.add(1);
+        one.add(0);
+        int result = quaternaryConverter.toDecimal(one);
+        Assertions.assertEquals(4,result);
+    }
+
+    @Test
+    void ConvertToDecimal_231(){
+        ArrayList<Integer> one = new ArrayList<Integer>();
+        one.add(2);
+        one.add(3);
+        one.add(1);
+        int result = quaternaryConverter.toDecimal(one);
+        Assertions.assertEquals(45,result);
+    }
+
+    @Test
+    void ConvertToDecimal_03120102(){
+        ArrayList<Integer> one = new ArrayList<Integer>();
+        one.add(0);one.add(3);one.add(1);one.add(2);
+        one.add(0);one.add(1);one.add(0);one.add(2);
+        int result = quaternaryConverter.toDecimal(one);
+        Assertions.assertEquals(13842,result);
+    }
 }

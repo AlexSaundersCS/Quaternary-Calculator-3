@@ -1,6 +1,5 @@
 package com.example.quarternarycalc.QuaternaryConverter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class QuaternaryConverter {
@@ -12,7 +11,7 @@ public class QuaternaryConverter {
         int decimalNumber = 0;
 
         for (int digit : quaternaryNumber) {
-            decimalNumber += digit * (4 ^ quaternaryPower);
+            decimalNumber += digit * Math.pow(4,quaternaryPower);
             quaternaryPower -= 1;
         }
 
