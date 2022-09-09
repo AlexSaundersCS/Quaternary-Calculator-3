@@ -14,6 +14,9 @@ public class CalculatorUI extends JFrame {
             btnSquare;
     JButton numBtn[];
     JTextField output;
+    int[] number1;
+    int[] number2;
+    CalcOperation operation;
 
     public CalculatorUI(){
         super("Quarternary Calculator");
