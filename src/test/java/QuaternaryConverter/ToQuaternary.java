@@ -18,50 +18,44 @@ public class ToQuaternary {
 
     @Test
     void ConvertToQuaternary_Zero(){
-        int[] result = quaternaryConverter.toQuaternary(0);
-        assertArrayEquals(new int[]{0},result);
+        String result = quaternaryConverter.toQuaternary(0);
+        Assertions.assertTrue("0".equals( result ) );
     }
 
     @Test
     void ConvertToQuaternary_One(){
-        int[] result = quaternaryConverter.toQuaternary(1);
-        assertArrayEquals(new int[]{1},result);
+        String result = quaternaryConverter.toQuaternary(4);
+        Assertions.assertTrue("10".equals( result ) );
+    }
+
+    @Test
+    void ConvertToQuaternary_Two(){
+        String result = quaternaryConverter.toQuaternary(4896);
+        Assertions.assertTrue("1030200".equals( result ) );
+    }
+
+    @Test
+    void ConvertToQuaternary_Three(){
+        String result = quaternaryConverter.toQuaternary(349525);
+        Assertions.assertTrue("1111111111".equals( result ) );
     }
 
     @Test
     void ConvertToQuaternary_Four(){
-        int[] result = quaternaryConverter.toQuaternary(4);
-        assertArrayEquals(new int[]{1},result);
+        String result = quaternaryConverter.toQuaternary(5105);
+        Assertions.assertTrue("1033301".equals( result ) );
     }
 
     @Test
-    void ConvertToQuaternary_Seven(){
-        int[] result = quaternaryConverter.toQuaternary(7);
-        assertArrayEquals(new int[]{1},result);
+    void ConvertToQuaternary_Five(){
+        String result = quaternaryConverter.toQuaternary(3654);
+        Assertions.assertTrue("321012".equals( result ) );
     }
 
     @Test
-    void ConvertToQuaternary_Thirteen(){
-        int[] result = quaternaryConverter.toQuaternary(13);
-        assertArrayEquals(new int[]{1,3},result);
-    }
-
-    @Test
-    void ConvertToQuaternary_TwentyTwo(){
-        int[] result = quaternaryConverter.toQuaternary(22);
-        assertArrayEquals(new int[]{1,1,2},result);
-    }
-
-    @Test
-    void ConvertToQuaternary_OneHundredAndFive(){
-        int[] result = quaternaryConverter.toQuaternary(105);
-        assertArrayEquals(new int[]{1221},result);
-    }
-
-    @Test
-    void ConvertToQuaternary_FiveHundredSeventyFive(){
-        int[] result = quaternaryConverter.toQuaternary(105);
-        assertArrayEquals(new int[]{1221},result);
+    void ConvertToQuaternary_Six(){
+        String result = quaternaryConverter.toQuaternary(23280);
+        Assertions.assertTrue("11223300".equals( result ) );
     }
 
 
