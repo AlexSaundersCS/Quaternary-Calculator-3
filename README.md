@@ -49,6 +49,7 @@ Joshua = Unit Testing
 <br>Bradley = UI/Unit Testing/Connection
 
 ## Screenshots
+![alt text](https://github.com/AlexSaundersCS/Quaternary-Calculator-3/blob/main/exampleimg/Screenshot%20(9).png)
 
 ## Dependencies
 JavaFx
