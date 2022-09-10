@@ -132,50 +132,24 @@ public class CalculatorUI extends JFrame implements ActionListener {
             controller.handleDelete();
         }if(e.getSource() ==btnDividing ){
             controller.handleBinaryOperationPressed(CalcOperation.Divide);
-            output.setText(controller.getNumber2().toString().replace(",", "")  //remove the commas
-                    .replace("[", "")  //remove the right bracket
-                    .replace("]", "")  //remove the left bracket
-                    .trim());
         }
         if(e.getSource() ==btnAdding ){
             controller.handleBinaryOperationPressed(CalcOperation.Add);
-            output.setText(controller.getNumber2().toString()
-                    .replace(",", "")  //remove the commas
-                    .replace("[", "")  //remove the right bracket
-                    .replace("]", "")  //remove the left bracket
-                    .trim());
         }
         if(e.getSource() ==btnMultiplying ) {
             controller.handleBinaryOperationPressed(CalcOperation.Multiply);
-            output.setText(controller.getNumber2().toString().replace(",", "")  //remove the commas
-                    .replace("[", "")  //remove the right bracket
-                    .replace("]", "")  //remove the left bracket
-                    .trim());
         }
         if(e.getSource() ==btnSubtracting ) {
             controller.handleBinaryOperationPressed(CalcOperation.Subtract);
-            output.setText(controller.getNumber2().toString().replace(",", "")  //remove the commas
-                    .replace("[", "")  //remove the right bracket
-                    .replace("]", "")  //remove the left bracket
-                    .trim());
         }
         if(e.getSource() ==btnEquals ) {
             controller.handleEqualPress();
-            output.setText(controller.getResult().toString()
-                    .replace(",", "")  //remove the commas
-                    .replace("[", "")  //remove the right bracket
-                    .replace("]", "")  //remove the left bracket
-                    .trim());
-            System.out.println(controller.getNumber1());
-            System.out.println(controller.getOperation());
-            System.out.println(controller.getNumber2());
-            System.out.println(controller.getResult());
         }
         if(e.getSource() ==btnClear ) {
             controller.handleClear();
         }
         if(e.getSource() ==btnSquare ) {
-            controller.handleBinaryOperationPressed(CalcOperation.Exponent);
+            controller.handleExponentPressed();
         }
         if(e.getSource() ==btnSquareroot ){
             controller.handleSquareRootPressed();

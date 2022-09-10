@@ -1,58 +1,101 @@
 package QuaternaryConverter;
 
-import com.example.quarternarycalc3.QuaternaryConverter.QuaternaryConverter;
+import com.example.quarternarycalc.QuaternaryConverter.QuaternaryConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ToQuaternary {
     QuaternaryConverter quaternaryConverter = new QuaternaryConverter();
 
-
     @Test
     void ConvertToQuaternary_Zero(){
-        int[] result = quaternaryConverter.toQuaternary(0);
-        Assertions.assertArrayEquals(result, new int[]{0});
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(0);
+        ArrayList<Integer> zero = new ArrayList<>();
+        zero.add(0);
+        Assertions.assertArrayEquals(result.toArray(), zero.toArray());
     }
 
     @Test
     void ConvertToQuaternary_One(){
-        int[] result = quaternaryConverter.toQuaternary(4);
-        Assertions.assertArrayEquals(result, new int[]{1, 0});
-    }
 
-    @Test
-    void ConvertToQuaternary_Two(){
-        int[] result = quaternaryConverter.toQuaternary(4896);
-        Assertions.assertArrayEquals(result, new int[]{1, 0, 3, 0, 2, 0, 0});
-    }
-
-    @Test
-    void ConvertToQuaternary_Three(){
-        int[] result = quaternaryConverter.toQuaternary(349525);
-        Assertions.assertArrayEquals(result, new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1});
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(1);
+        ArrayList<Integer> one = new ArrayList<>();
+        one.add(1);
+        Assertions.assertArrayEquals(result.toArray(), one.toArray());
     }
 
     @Test
     void ConvertToQuaternary_Four(){
-        int[] result = quaternaryConverter.toQuaternary(5105);
-        Assertions.assertArrayEquals(result, new int[]{1, 0, 3, 3, 3, 0, 1});
+        ArrayList<Integer> four = new ArrayList<>();
+        four.add(1);
+        four.add(0);
+
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(4);
+        Assertions.assertArrayEquals(result.toArray(), four.toArray());
+    }
+//
+    @Test
+    void ConvertToQuaternary_BigNumber4(){
+        ArrayList<Integer> bigNumber = new ArrayList<>();
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(1);
+
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(349525);
+        Assertions.assertArrayEquals(result.toArray(), bigNumber.toArray());
     }
 
     @Test
-    void ConvertToQuaternary_Five(){
-        int[] result = quaternaryConverter.toQuaternary(3654);
-        Assertions.assertArrayEquals(result, new int[]{3, 2, 1, 0, 1, 2});
+    void ConvertToQuaternary_BigNumber3(){
+        ArrayList<Integer> bigNumber = new ArrayList<>();
+        bigNumber.add(1);
+        bigNumber.add(0);
+        bigNumber.add(3);
+        bigNumber.add(3);
+        bigNumber.add(3);
+        bigNumber.add(0);
+        bigNumber.add(1);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(5105);
+        Assertions.assertArrayEquals(result.toArray(), bigNumber.toArray());
+    }
+//
+    @Test
+    void ConvertToQuaternary_BigNumber(){
+        ArrayList<Integer> bigNumber = new ArrayList<>();
+        bigNumber.add(3);
+        bigNumber.add(2);
+        bigNumber.add(1);
+        bigNumber.add(0);
+        bigNumber.add(1);
+        bigNumber.add(2);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(3654);
+        Assertions.assertArrayEquals(result.toArray(), bigNumber.toArray());
     }
 
     @Test
-    void ConvertToQuaternary_Six(){
-        int[] result = quaternaryConverter.toQuaternary(23280);
-        Assertions.assertArrayEquals(result, new int[]{1, 1, 2, 2, 3, 3, 0, 0});
+    void ConvertToQuaternary_BigNumber_2(){
+        ArrayList<Integer> bigNumber = new ArrayList<>();
+        bigNumber.add(1);
+        bigNumber.add(1);
+        bigNumber.add(2);
+        bigNumber.add(2);
+        bigNumber.add(3);
+        bigNumber.add(3);
+        bigNumber.add(0);
+        bigNumber.add(0);
+        ArrayList<Integer> result = quaternaryConverter.toQuaternary(23280);
+        Assertions.assertArrayEquals(result.toArray(), bigNumber.toArray());
     }
-
-
-
 
 }

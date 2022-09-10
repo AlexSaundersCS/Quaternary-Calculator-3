@@ -20,6 +20,21 @@ public class QuaternaryConverter {
 
 
     public ArrayList<Integer> toQuaternary(int decimalNumber){
-        return new ArrayList<Integer>();
+        {
+            ArrayList<Integer> result = new ArrayList<Integer>();
+            if(decimalNumber ==0){
+                result.add(0);
+                return result;
+            }
+
+            while (decimalNumber > 0)
+            {
+                result.add(0, decimalNumber % 4);
+                decimalNumber /= 4;
+            }
+
+            // Reverse the result
+            return result;
+        }
     }
 }

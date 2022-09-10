@@ -54,16 +54,21 @@ public class CalculatorController {
         switch (operation){
             case Add:
                 var intResult = calculator.addition(convertedNum1,convertedNum2);
+                System.out.println(intResult);
                 setResult(converter.toQuaternary(intResult));
+                break;
             case Subtract:
                 intResult =calculator.subtraction(convertedNum1,convertedNum2);
                 setResult(converter.toQuaternary(intResult));
+                break;
             case Multiply:
                 intResult =calculator.multiplication(convertedNum1,convertedNum2);
                 setResult(converter.toQuaternary(intResult));
+                break;
             case Divide:
                 intResult =calculator.division(convertedNum1,convertedNum2);
                 setResult(converter.toQuaternary(intResult));
+                break;
         }
 
     }
