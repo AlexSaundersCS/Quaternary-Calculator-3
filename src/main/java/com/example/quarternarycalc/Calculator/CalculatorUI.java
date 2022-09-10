@@ -20,6 +20,7 @@ public class CalculatorUI extends JFrame implements ActionListener {
             btnOne,
             btnTwo,
             btnThree;
+    JCheckBox decimalToggle;
     JTextField output;
     CalculatorController controller;
 
@@ -36,6 +37,7 @@ public class CalculatorUI extends JFrame implements ActionListener {
 
         //Creates the non number Buttons
         output = new JTextField(10);
+        decimalToggle = new JCheckBox("Show Result as Decimal");
         btnDelete = new JButton("Del");
         btnDividing = new JButton("÷");
         btnAdding = new JButton("+");
@@ -67,6 +69,7 @@ public class CalculatorUI extends JFrame implements ActionListener {
         btnThree.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 120));
 
         output.addActionListener(this);
+        decimalToggle.addActionListener(this);
         btnDelete.addActionListener(this);
         btnDividing.addActionListener(this);
         btnAdding.addActionListener(this);
@@ -87,6 +90,7 @@ public class CalculatorUI extends JFrame implements ActionListener {
         output.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 100));
         output.setEditable(false);
         output.addActionListener(this);
+        decimalToggle.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 10));
 
         //layout of each row and sets the row, can be moved around
         row1.setLayout(new BoxLayout(row1, BoxLayout.LINE_AXIS));
@@ -112,11 +116,13 @@ public class CalculatorUI extends JFrame implements ActionListener {
         //adds output and the rows to Panel
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
         mainPanel.add(output);
+
         mainPanel.add(Box.createRigidArea(new Dimension(0, 5)));
         mainPanel.add(row1);
         mainPanel.add(row2);
         mainPanel.add(row3);
         mainPanel.add(row4);
+        mainPanel.add(decimalToggle);
 
 
         this.add(mainPanel);
@@ -165,6 +171,13 @@ public class CalculatorUI extends JFrame implements ActionListener {
         }
         if(e.getSource() ==btnThree ){
             controller.handleNumberPressed(3);
+        }
+        if(e.getSource() == decimalToggle) {
+            if (decimalToggle.isSelected()) {
+                int resultInt = controller.converter.toDecimal(controller.getResult());
+                output.setText(String.valueOf(resultInt));
+                return;
+            }
         }
         if(controller.getOperation() == null && controller.getNumber2().isEmpty()) {
             output.setText(controller.getNumber1().toString()
