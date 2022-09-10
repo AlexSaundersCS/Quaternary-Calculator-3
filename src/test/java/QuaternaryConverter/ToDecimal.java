@@ -37,29 +37,31 @@ public class ToDecimal {
 
     @Test
     void ConvertToDecimal_10(){
-        ArrayList<Integer> one = new ArrayList<Integer>();
-        one.add(1);
-        one.add(0);
-        int result = quaternaryConverter.toDecimal(one);
+        ArrayList<Integer> four = new ArrayList<Integer>();
+        four.add(1);
+        four.add(0);
+        System.out.println(four);
+        int result = quaternaryConverter.toDecimal(four);
         Assertions.assertEquals(4,result);
     }
 
     @Test
     void ConvertToDecimal_231(){
-        ArrayList<Integer> one = new ArrayList<Integer>();
-        one.add(2);
-        one.add(3);
-        one.add(1);
-        int result = quaternaryConverter.toDecimal(one);
+        ArrayList<Integer> fortyFive = new ArrayList<Integer>();
+        fortyFive.add(2);
+        fortyFive.add(3);
+        fortyFive.add(1);
+        System.out.println(fortyFive);
+        int result = quaternaryConverter.toDecimal(fortyFive);
         Assertions.assertEquals(45,result);
     }
 
     @Test
     void ConvertToDecimal_03120102(){
-        ArrayList<Integer> one = new ArrayList<Integer>();
-        one.add(0);one.add(3);one.add(1);one.add(2);
-        one.add(0);one.add(1);one.add(0);one.add(2);
-        int result = quaternaryConverter.toDecimal(one);
+        ArrayList<Integer> bigNumber = new ArrayList<Integer>();
+        bigNumber.add(0);bigNumber.add(3);bigNumber.add(1);bigNumber.add(2);
+        bigNumber.add(0);bigNumber.add(1);bigNumber.add(0);bigNumber.add(2);
+        int result = quaternaryConverter.toDecimal(bigNumber);
         Assertions.assertEquals(13842,result);
     }
 }

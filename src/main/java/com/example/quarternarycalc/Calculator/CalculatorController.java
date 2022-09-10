@@ -34,12 +34,14 @@ public class CalculatorController {
     }
 
     public void handleExponentPressed(){
-         int convertedNum1 =converter.toDecimal(number1);
+        this.operation = CalcOperation.Exponent;
+        int convertedNum1 =converter.toDecimal(number1);
          int result = calculator.exponents(convertedNum1);
          setResult(converter.toQuaternary(result));
     }
 
     public void handleSquareRootPressed(){
+        this.operation = CalcOperation.Root;
         int convertedNum1 =converter.toDecimal(number1);
         int result = calculator.squareRoot(convertedNum1);
         setResult(converter.toQuaternary(result));
@@ -52,9 +54,7 @@ public class CalculatorController {
         switch (operation){
             case Add:
                 var intResult = calculator.addition(convertedNum1,convertedNum2);
-                System.out.println(converter.toQuaternary(intResult));
                 setResult(converter.toQuaternary(intResult));
-
             case Subtract:
                 intResult =calculator.subtraction(convertedNum1,convertedNum2);
                 setResult(converter.toQuaternary(intResult));

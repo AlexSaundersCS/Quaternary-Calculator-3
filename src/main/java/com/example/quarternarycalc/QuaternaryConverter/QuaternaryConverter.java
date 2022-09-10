@@ -14,7 +14,6 @@ public class QuaternaryConverter {
             decimalNumber += digit * Math.pow(4,quaternaryPower);
             quaternaryPower -= 1;
         }
-
             return decimalNumber;
     }
 

@@ -199,7 +199,7 @@ public class CalculatorUI extends JFrame implements ActionListener {
                     .replace("]", "")  //remove the left bracket
                     .trim());
         }
-        if(controller.getOperation() != null ){
+        if(controller.getOperation() != null && controller.getOperation() != CalcOperation.Exponent && controller.getOperation() != CalcOperation.Root  ){
             output.setText(controller.getNumber2().toString()
                     .replace(",", "")  //remove the commas
                     .replace("[", "")  //remove the right bracket
